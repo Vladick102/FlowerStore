@@ -35,21 +35,21 @@ public class FlowerTest {
     @Test
     public void testStore() {
         final int PRICE = 100;
-        final int countA = 5;
-        final int countB = 10;
+        final int COUNT_A = 5;
+        final int COUNT_B = 10;
 
-        Flower flower2 = new Flower();
-        flower2.setPrice(PRICE);
-        flower2.setFlowerType(FlowerType.ROSE);
+        Flower flowerB = new Flower();
+        flowerB.setPrice(PRICE);
+        flowerB.setFlowerType(FlowerType.ROSE);
 
         flower.setPrice(PRICE);
         flower.setFlowerType(FlowerType.ROSE);
 
         FlowerBucket flowerBucket = new FlowerBucket();
 
-        FlowerPack flowerPackA = new FlowerPack(flower, countA);
-        FlowerPack flowerPackB = new FlowerPack(flower, countB);
-        FlowerPack flowerPackC = new FlowerPack(flower2, countA);
+        FlowerPack flowerPackA = new FlowerPack(flower, COUNT_A);
+        FlowerPack flowerPackB = new FlowerPack(flower, COUNT_B);
+        FlowerPack flowerPackC = new FlowerPack(flowerB, COUNT_A);
 
         ArrayList<FlowerPack> arrA = new ArrayList<FlowerPack>();
         ArrayList<FlowerPack> arrB = new ArrayList<FlowerPack>();
