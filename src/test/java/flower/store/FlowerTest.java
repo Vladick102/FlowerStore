@@ -35,8 +35,8 @@ public class FlowerTest {
     @Test
     public void testStore() {
         final int PRICE = 100;
-        final int COUNT1 = 5;
-        final int COUNT2 = 10;
+        final int countA = 5;
+        final int countB = 10;
 
         Flower flower2 = new Flower();
         flower2.setPrice(PRICE);
@@ -47,23 +47,23 @@ public class FlowerTest {
 
         FlowerBucket flowerBucket = new FlowerBucket();
 
-        FlowerPack flowerPack1 = new FlowerPack(flower, COUNT1);
-        FlowerPack flowerPack2 = new FlowerPack(flower, COUNT2);
-        FlowerPack flowerPack3 = new FlowerPack(flower2, COUNT1);
+        FlowerPack flowerPackA = new FlowerPack(flower, countA);
+        FlowerPack flowerPackB = new FlowerPack(flower, countB);
+        FlowerPack flowerPackC = new FlowerPack(flower2, countA);
 
-        ArrayList<FlowerPack> arr1 = new ArrayList<FlowerPack>();
-        ArrayList<FlowerPack> arr2 = new ArrayList<FlowerPack>();
+        ArrayList<FlowerPack> arrA = new ArrayList<FlowerPack>();
+        ArrayList<FlowerPack> arrB = new ArrayList<FlowerPack>();
 
-        Store store = new Store(arr1);
+        Store store = new Store(arrA);
 
-        flowerBucket.add(flowerPack1);
+        flowerBucket.add(flowerPackA);
 
-        arr1.add(flowerPack1);
-        arr1.add(flowerPack2);
-        arr2.add(flowerPack1);
+        arrA.add(flowerPackA);
+        arrA.add(flowerPackB);
+        arrB.add(flowerPackA);
 
-        ArrayList<FlowerPack> res = store.search(flowerPack3);
+        ArrayList<FlowerPack> res = store.search(flowerPackC);
 
-        Assertions.assertEquals(res, arr2);
+        Assertions.assertEquals(res, arrB);
     }
 }

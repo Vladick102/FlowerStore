@@ -16,10 +16,6 @@ public class Flower {
     private double price;
     private FlowerType flowerType;
 
-    public String getColor() {
-        return color.toString();
-    }
-
     public Flower(Flower flower) {
         flowerType = flower.flowerType;
         sepalLength = flower.sepalLength;
@@ -27,8 +23,13 @@ public class Flower {
         color = flower.color;
     }
 
+    public String getColor() {
+        return color.toString();
+    }
+
     public boolean match(Flower f) {
-        return this.price == f.getPrice() && this.flowerType.equals(f.getFlowerType())
+        return this.price == f.getPrice()
+                && this.flowerType.equals(f.getFlowerType())
                 && this.getSepalLength() == f.getSepalLength();
     }
 }

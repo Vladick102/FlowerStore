@@ -9,13 +9,13 @@ public class FlowerPack {
     private Flower flower;
     private int count;
 
-    public double getPrice() {
-        return flower.getPrice() * count;
+    public FlowerPack(Flower newFlower, int newCount) {
+        flower = new Flower(newFlower);
+        count = newCount;
     }
 
-    public FlowerPack(Flower flower1, int count1) {
-        flower = new Flower(flower1);
-        count = count1;
+    public double getPrice() {
+        return flower.getPrice() * count;
     }
 
     public boolean match(FlowerPack fp) {
